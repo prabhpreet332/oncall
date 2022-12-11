@@ -4,3 +4,6 @@
     1. docker exec -it oncall_engine python manage.py createsuperuser
     2. django-admin website: http://localhost:8080/django-admin/
 4. Get the models diagram 
+
+links:
+1. https://www.youtube.com/@Grafana/search?query=oncall
