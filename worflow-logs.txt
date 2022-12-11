@@ -1,0 +1,88 @@
+Open questions: 
+1. need postman collection (have curl commands in docs - HTTP API reference)
+2. more info in logs - filepath, filename, line no etc -- need to get the logging updated
+
+oncall -> alertgroups dashboard
+
+➜  oncall git:(dev) docker logs -f oncall_engine                                                                                   [8/12/22 09:27:13]
+Watching for file changes with StatReloader
+source=engine:app google_trace_id=none logger=django.utils.autoreload Watching for file changes with StatReloader
+source=engine:app google_trace_id=none logger=apps.grafana_plugin.helpers.client Error connecting to api instance Expecting value: line 1 column 1 (char 0)
+source=engine:app google_trace_id=none logger=root outbound latency=0.024823821004247293 status=200 method=HEAD url=http://localhost:3000/api/org slow=0 
+source=engine:app google_trace_id=none logger=root inbound latency=0.054707 status=200 method=GET path=/api/internal/v1/plugin/status content-length= slow=0 
+[08/Dec/2022 03:58:10] "GET /api/internal/v1/plugin/status HTTP/1.1" 200 126
+source=engine:app google_trace_id=none logger=root inbound latency=0.089641 status=202 method=POST path=/api/internal/v1/plugin/sync content-length=0 slow=0 
+[08/Dec/2022 03:58:10] "POST /api/internal/v1/plugin/sync HTTP/1.1" 202 67
+source=engine:app google_trace_id=none logger=root inbound latency=0.018698 status=202 method=GET path=/api/internal/v1/plugin/sync content-length= slow=0 
+[08/Dec/2022 03:58:10] "GET /api/internal/v1/plugin/sync HTTP/1.1" 202 0
+source=engine:app google_trace_id=none logger=root inbound latency=0.014029 status=202 method=GET path=/api/internal/v1/plugin/sync content-length= slow=0 
+[08/Dec/2022 03:58:10] "GET /api/internal/v1/plugin/sync HTTP/1.1" 202 0
+source=engine:app google_trace_id=none logger=root inbound latency=0.008871 status=202 method=GET path=/api/internal/v1/plugin/sync content-length= slow=0 
+[08/Dec/2022 03:58:10] "GET /api/internal/v1/plugin/sync HTTP/1.1" 202 0
+source=engine:app google_trace_id=none logger=root inbound latency=0.011807 status=200 method=GET path=/api/internal/v1/plugin/sync content-length= slow=0 
+[08/Dec/2022 03:58:10] "GET /api/internal/v1/plugin/sync HTTP/1.1" 200 60
+source=engine:app google_trace_id=none logger=root inbound latency=0.020563 status=200 method=GET path=/api/internal/v1/user content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:10] "GET /api/internal/v1/user HTTP/1.1" 200 1316
+source=engine:app google_trace_id=none logger=root inbound latency=0.014074 status=200 method=GET path=/api/internal/v1/teams content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:10] "GET /api/internal/v1/teams?search= HTTP/1.1" 200 61
+source=engine:app google_trace_id=none logger=root inbound latency=0.039025 status=200 method=GET path=/api/internal/v1/current_team content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/current_team HTTP/1.1" 200 567
+source=engine:app google_trace_id=none logger=root inbound latency=0.026431 status=200 method=GET path=/api/internal/v1/alert_receive_channels/integration_options content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/alert_receive_channels/integration_options HTTP/1.1" 200 883
+source=engine:app google_trace_id=none logger=root inbound latency=0.026754 status=200 method=GET path=/api/internal/v1/notification_policies/notify_by_options content-length= slow=0 user_id=1 org_id=1 
+source=engine:app google_trace_id=none logger=root inbound latency=0.034811 status=200 method=OPTIONS path=/api/internal/v1/notification_policies content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "OPTIONS /api/internal/v1/notification_policies HTTP/1.1" 200 1311
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/notification_policies/notify_by_options HTTP/1.1" 200 571
+source=engine:app google_trace_id=none logger=root inbound latency=0.046704 status=200 method=GET path=/api/internal/v1/features content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/features HTTP/1.1" 200 93
+source=engine:app google_trace_id=none logger=root inbound latency=0.020591 status=200 method=GET path=/api/internal/v1/escalation_policies/escalation_options content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/escalation_policies/escalation_options HTTP/1.1" 200 2214
+source=engine:app google_trace_id=none logger=root inbound latency=0.027069 status=200 method=OPTIONS path=/api/internal/v1/escalation_policies content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "OPTIONS /api/internal/v1/escalation_policies HTTP/1.1" 200 2836
+source=engine:app google_trace_id=none logger=root inbound latency=0.023608 status=200 method=GET path=/api/internal/v1/escalation_policies/num_minutes_in_window_options content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/escalation_policies/num_minutes_in_window_options HTTP/1.1" 200 162
+source=engine:app google_trace_id=none logger=root inbound latency=0.013455 status=200 method=GET path=/api/internal/v1/alert_receive_channels/integration_options content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/alert_receive_channels/integration_options HTTP/1.1" 200 883
+source=engine:app google_trace_id=none logger=root inbound latency=0.027673 status=200 method=GET path=/api/internal/v1/alertgroups/silence_options content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/alertgroups/silence_options HTTP/1.1" 200 330
+source=engine:app google_trace_id=none logger=root inbound latency=0.02796 status=200 method=GET path=/api/internal/v1/alertgroups/bulk_action_options content-length= slow=0 user_id=1 org_id=1 
+source=engine:app google_trace_id=none logger=root inbound latency=0.022315 status=200 method=GET path=/api/internal/v1/alertgroups/filters content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/alertgroups/bulk_action_options HTTP/1.1" 200 189
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/alertgroups/filters HTTP/1.1" 200 1094
+source=engine:app google_trace_id=none logger=root inbound latency=0.05459 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/alertgroups/stats?acknowledged=true&resolved=false&status=1 HTTP/1.1" 200 357
+source=engine:app google_trace_id=none logger=root inbound latency=0.035712 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/alertgroups/stats?acknowledged=false&resolved=false&status=0 HTTP/1.1" 200 357
+source=engine:app google_trace_id=none logger=root inbound latency=0.058169 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:11] "GET /api/internal/v1/alertgroups/stats?resolved=true&status=2 HTTP/1.1" 200 357
+source=engine:app google_trace_id=none logger=root inbound latency=0.039387 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:12] "GET /api/internal/v1/alertgroups/stats?silenced=true&status=3 HTTP/1.1" 200 357
+source=engine:app google_trace_id=none logger=root inbound latency=0.056516 status=200 method=GET path=/api/internal/v1/teams content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:12] "GET /api/internal/v1/teams?search= HTTP/1.1" 200 61
+source=engine:app google_trace_id=none logger=root inbound latency=0.075263 status=200 method=GET path=/api/internal/v1/alertgroups content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:12] "GET /api/internal/v1/alertgroups?is_root=true&perpage=25&status=0&status=1 HTTP/1.1" 200 42
+source=engine:app google_trace_id=none logger=root inbound latency=0.023874 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:26] "GET /api/internal/v1/alertgroups/stats?acknowledged=false&resolved=false&status=0 HTTP/1.1" 200 357
+source=engine:app google_trace_id=none logger=root inbound latency=0.092984 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:27] "GET /api/internal/v1/alertgroups/stats?acknowledged=true&resolved=false&status=1 HTTP/1.1" 200 357
+source=engine:app google_trace_id=none logger=root inbound latency=0.108199 status=200 method=GET path=/api/internal/v1/alertgroups content-length= slow=0 user_id=1 org_id=1 
+source=engine:app google_trace_id=none logger=root inbound latency=0.114098 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:27] "GET /api/internal/v1/alertgroups/stats?resolved=true&status=2 HTTP/1.1" 200 357
+[08/Dec/2022 03:58:27] "GET /api/internal/v1/alertgroups?is_root=true&perpage=25&status=0&status=1 HTTP/1.1" 200 42
+source=engine:app google_trace_id=none logger=root inbound latency=0.120862 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:58:27] "GET /api/internal/v1/alertgroups/stats?silenced=true&status=3 HTTP/1.1" 200 357
+
+
+===============================================recurring logs  every ~14s
+source=engine:app google_trace_id=none logger=root inbound latency=0.029086 status=200 method=GET path=/api/internal/v1/alertgroups content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:59:56] "GET /api/internal/v1/alertgroups?is_root=true&perpage=25&status=0&status=1 HTTP/1.1" 200 42
+source=engine:app google_trace_id=none logger=root inbound latency=0.048088 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+source=engine:app google_trace_id=none logger=root inbound latency=0.040933 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:59:56] "GET /api/internal/v1/alertgroups/stats?acknowledged=true&resolved=false&status=1 HTTP/1.1" 200 357
+[08/Dec/2022 03:59:56] "GET /api/internal/v1/alertgroups/stats?acknowledged=false&resolved=false&status=0 HTTP/1.1" 200 357
+source=engine:app google_trace_id=none logger=root inbound latency=0.060781 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+source=engine:app google_trace_id=none logger=root inbound latency=0.063884 status=200 method=GET path=/api/internal/v1/alertgroups/stats content-length= slow=0 user_id=1 org_id=1 
+[08/Dec/2022 03:59:56] "GET /api/internal/v1/alertgroups/stats?resolved=true&status=2 HTTP/1.1" 200 357
+[08/Dec/2022 03:59:56] "GET /api/internal/v1/alertgroups/stats?silenced=true&status=3 HTTP/1.1" 200 357
+
+
